@@ -21,6 +21,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "comun.metricas.MetricasMiddleware",
 ]
 
 ROOT_URLCONF = "document_service.urls"
