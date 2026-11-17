@@ -11,3 +11,4 @@ requests==2.34.2
 cryptography==50.0.2
 prometheus-client==0.26.0
 packaging==26.3
+drf-spectacular==0.30.0

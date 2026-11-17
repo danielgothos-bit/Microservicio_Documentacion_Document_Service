@@ -1,0 +1,43 @@
+EVIDENCIA DE PRUEBAS · Microservicio_Documentacion_Document_Service
+Fecha: 2026-11-17 12:45
+Comando: USE_SQLITE=1 CELERY_EAGER=1 coverage run manage.py test -v 2
+
+Pruebas exigidas (Momento 3): tests/test_unitarias.py (2 unitarias con mocks) y tests/test_integracion.py (1 de integración).
+
+=== Resultado de cada prueba ===
+test_eventos_generan_informe_y_comprobante (documentos.tests.DocumentosTests.test_eventos_generan_informe_y_comprobante) ... ok
+test_log_es_solo_insercion (documentos.tests.DocumentosTests.test_log_es_solo_insercion) ... ok
+test_subir_archivo_cifrado_y_descargar (documentos.tests.DocumentosTests.test_subir_archivo_cifrado_y_descargar) ... ok
+test_validaciones (documentos.tests.DocumentosTests.test_validaciones) ... ok
+test_evento_de_pago_genera_comprobante_descargable (tests.test_integracion.DocumentosIntegracionTests.test_evento_de_pago_genera_comprobante_descargable) ... ok
+test_bitacora_de_accesos_no_permite_modificar (tests.test_unitarias.AuditoriaUnitTests.test_bitacora_de_accesos_no_permite_modificar) ... ok
+test_cifrar_y_descifrar_conserva_el_contenido (tests.test_unitarias.CifradoUnitTests.test_cifrar_y_descifrar_conserva_el_contenido) ... ok
+
+Ran 8 tests in 0.088s
+OK
+
+=== Reporte de cobertura (coverage.py) ===
+Name                        Stmts   Miss  Cover   Missing
+---------------------------------------------------------
+comun\celery_app.py             9      0   100%
+comun\clientes.py              66     66     0%   10-101
+comun\errores.py               14      2    86%   20, 24
+comun\eventos.py               40     23    42%   51-69, 75-93
+comun\logs.py                  14      1    93%   24
+comun\metricas.py              23      1    96%   44
+comun\models.py                 8      0   100%
+comun\servicio.py               2      0   100%
+comun\views.py                 42     12    71%   20-27, 34, 45-46, 49-50
+document_service\urls.py        5      0   100%
+documentos\apps.py              4      0   100%
+documentos\cifrado.py          16      0   100%
+documentos\handlers.py         19      2    89%   14, 17
+documentos\models.py           48      2    96%   30, 42
+documentos\serializers.py      28      2    93%   38, 43
+documentos\servicios.py        18      0   100%
+documentos\urls.py              3      0   100%
+documentos\views.py            56      7    88%   26-27, 61, 66-68, 77
+---------------------------------------------------------
+TOTAL                         415    118    72%
+
+3 empty files skipped.
